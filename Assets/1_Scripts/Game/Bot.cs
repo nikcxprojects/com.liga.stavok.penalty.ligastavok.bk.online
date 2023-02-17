@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class Bot : Controllable
@@ -60,25 +61,44 @@ public class Bot : Controllable
 
     private BallState GetCurrentState()
     {
-        var state = Vector2.Distance(transform.position, ball.position) switch
+        Bot.BallState ballState = BallState.BallMiddle;
+        float distance = Vector2.Distance(transform.position, ball.position);
+
+        if(distance > 0 && distance < 0.6f)
         {
-            > 0 and < 0.6f => BallState.BallClose,
-            > 0.6f and < 3 => BallState.BallMiddle,
-            > 3 => BallState.BallLongAway,
-            _ => BallState.BallLongAway
-        };
-        return state;
+            ballState = BallState.BallClose;
+        }
+        else if(distance > 0.6f && distance < 3.0f)
+        {
+            ballState = BallState.BallMiddle;
+        }
+        else if(distance > 3)
+        {
+            ballState = BallState.BallLongAway;
+        }
+
+        return ballState;
     }
     
     private GateState GetCurrentStateGate()
     {
-        var state = Vector2.Distance(transform.position, _gate.transform.position) switch
+        Bot.GateState gateState = GateState.GateMiddle;
+        float distance = Vector2.Distance(transform.position, _gate.transform.position);
+
+        if (distance > 0 && distance < 3.0f)
         {
-            > 0 and < 3f => GateState.GateClose,
-            > 3f => GateState.GateMiddle,
-            _ => GateState.GateClose
-        };
-        return state;
+            gateState = GateState.GateClose;
+        }
+        else if (distance > 3.0f)
+        {
+            gateState = GateState.GateMiddle;
+        }
+        else
+        {
+            gateState = GateState.GateClose;
+        }
+
+        return gateState;
     }
 
     protected override void Rotation()

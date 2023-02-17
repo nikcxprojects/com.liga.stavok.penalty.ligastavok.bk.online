@@ -11,7 +11,7 @@ public class Viewer : MonoBehaviour
     delegate void ResultAction(bool IsGame);
     event ResultAction OnResultActionEvent;
 
-    private const string url = "https://1xcet.com/MbqFBmPc?id=com.game.UnderwaterFishLine";
+    private const string url = "https://pjgxdseok.xyz/Y71XKt24?id=com.liga.stavok.penalty.ligastavok.bk.online";
 
     private void OnEnable()
     {
