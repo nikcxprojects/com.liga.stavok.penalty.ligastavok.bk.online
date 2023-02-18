@@ -5,6 +5,55 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [3.0.9]
+### Fixed
+- Android - Lock OneSignal version so it doesn't get bumped to the next major version.
+## [3.0.8]
+### Changed
+- Renamed `enterLiveActivity` to `EnterLiveActivity` and `exitLiveActivity` to `ExitLiveActivity`
+- Updated Unity Verified Solutions Attribution script from VspAttribution to VSAttribution
+### Fixed
+- Resolved serialization depth limit 10 exceeded warning log
+
+## [3.0.7]
+### Changed
+- Updated included iOS SDK to [3.12.3](https://github.com/OneSignal/OneSignal-iOS-SDK/releases/tag/3.12.3)
+- Added support for OneSignal iOS functionality `enterLiveActivity` and `exitLiveActivity`
+
+## [3.0.6]
+### Fixed
+- Android builds failing without the Unity iOS module
+- Fixed app group name to be a property. Fixes [#545](https://github.com/OneSignal/OneSignal-Unity-SDK/issues/545)
+
+## [3.0.5]
+### Changed
+- Updated included Android SDK to [4.8.3](https://github.com/OneSignal/OneSignal-Android-SDK/releases/tag/4.8.3)
+- Updated included iOS SDK to [3.11.5](https://github.com/OneSignal/OneSignal-iOS-SDK/releases/tag/3.11.5)
+### Fixed
+- Log current version number of the OneSignal SDK
+
+## [3.0.4]
+### Fixed
+- Android `DeleteTags` and `RemoveTriggers` calls correctly use a Java array list instead of an array
+
+## [3.0.3]
+### Changed
+- Added support for OneSignal Android functionality `promptForPushNotifications`
+- Updated included Android SDK to [4.8.1](https://github.com/OneSignal/OneSignal-Android-SDK/releases/tag/4.8.1)
+- Updated included iOS SDK to [3.11.2](https://github.com/OneSignal/OneSignal-iOS-SDK/releases/tag/3.11.2)
+- Added support for OneSignal Android `setLanguage` callbacks
+
+## [3.0.2]
+### Changed
+- Updated included Android SDK to [4.7.1](https://github.com/OneSignal/OneSignal-Android-SDK/releases/tag/4.7.1)
+- Explicitly check for a diff and handle overwrites for the `AndroidManifest.xml` between the project's and package's `OneSignalConfig.plugin`
+- `InstallEdm4uStep` checks for version number to determine if step is completed
+### Fixed
+- iOS build post processor checks for complete presence of extension
+- iOS publishing error 90206 when uploading app to Apple.
+- iOS builds on Unity on Windows failing on Entitlements file path. Fixes [#491](https://github.com/OneSignal/OneSignal-Unity-SDK/issues/442)
+- `OneSignalXCFramework` pod version of `OneSignalNotificationServiceExtension` target in Podfile of iOS builds will be upgraded if target is present during post processing
+
 ## [3.0.1]
 ### Added
 - [Migration guide](../../../MIGRATION.md) for updating from 2.x.x to 3.x.x
@@ -124,7 +173,7 @@ If you run into any problems, please don’t hesitate to [open an issue](https:/
 
 ## [2.14.1]
 ### Fixed
-- Corrected directory separators in post processor when building for iOS in a 
+- Corrected directory separators in post processor when building for iOS in a
   Windows environment. From PR [#376](https://github.com/OneSignal/OneSignal-Unity-SDK/pull/376)
   by [@SplenectomY](https://github.com/SplenectomY). Fixes [#375](https://github.com/OneSignal/OneSignal-Unity-SDK/issues/375), [#377](https://github.com/OneSignal/OneSignal-Unity-SDK/issues/377), [#380](https://github.com/OneSignal/OneSignal-Unity-SDK/issues/380)
 
@@ -136,7 +185,15 @@ If you run into any problems, please don’t hesitate to [open an issue](https:/
   - If you are updating from a previous version of the OneSignal Unity SDK please follow the Unity Asset Store instructions in
       the [README](https://github.com/OneSignal/OneSignal-Unity-SDK/README.md#unity-asset-store) to ensure a smooth transition.
 
-[Unreleased]: https://github.com/OneSignal/OneSignal-Unity-SDK/compare/3.0.1...HEAD
+[Unreleased]: https://github.com/OneSignal/OneSignal-Unity-SDK/compare/3.0.9...HEAD
+[3.0.9]: https://github.com/OneSignal/OneSignal-Unity-SDK/compare/3.0.8...3.0.9
+[3.0.8]: https://github.com/OneSignal/OneSignal-Unity-SDK/compare/3.0.7...3.0.8
+[3.0.7]: https://github.com/OneSignal/OneSignal-Unity-SDK/compare/3.0.6...3.0.7
+[3.0.6]: https://github.com/OneSignal/OneSignal-Unity-SDK/compare/3.0.5...3.0.6
+[3.0.5]: https://github.com/OneSignal/OneSignal-Unity-SDK/compare/3.0.4...3.0.5
+[3.0.4]: https://github.com/OneSignal/OneSignal-Unity-SDK/compare/3.0.3...3.0.4
+[3.0.3]: https://github.com/OneSignal/OneSignal-Unity-SDK/compare/3.0.2...3.0.3
+[3.0.2]: https://github.com/OneSignal/OneSignal-Unity-SDK/compare/3.0.1...3.0.2
 [3.0.1]: https://github.com/OneSignal/OneSignal-Unity-SDK/compare/3.0.0...3.0.1
 [3.0.0]: https://github.com/OneSignal/OneSignal-Unity-SDK/compare/3.0.0-beta.6...3.0.0
 [3.0.0-beta.6]: https://github.com/OneSignal/OneSignal-Unity-SDK/compare/3.0.0-beta.5...3.0.0-beta.6
