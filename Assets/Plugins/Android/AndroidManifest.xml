@@ -16,13 +16,8 @@
 			<action android:name="android.intent.action.VIEW"/>
             <category android:name="android.intent.category.DEFAULT" />
             <category android:name="android.intent.category.BROWSABLE" />
-			<data android:scheme="open.special.dom" />
 		  </intent-filter>
 	  <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
 	  </activity>
-	  <meta-data android:name="ymp_firebase_default_app_id" android:value="1:340478821317:android:f5fe6f6fecf2b3fe9cc1ac" />
-	  <meta-data android:name="ymp_gcm_default_sender_id" android:value="number:340478821317" />
-	  <meta-data android:name="ymp_firebase_default_api_key" android:value="AIzaSyAgGqH9rWOrwetQ_TeSlXpdHtOnMi-w7tQ" />
-	  <meta-data android:name="ymp_firebase_default_project_id" android:value="comgameunderwaterfishline" />
   </application>
 </manifest>
